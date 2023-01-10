@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+ 
+    <!-- CSS -->
+    <style>
+        body.dark h1 {
+            background: #111111;
+            color:snow; 
+        }
+
+        body.dark .table {
+            background: #111111;
+            color:snow; 
+        }
+
+        body.dark .modal-content{
+            background: #111111;
+            color:snow; 
+        }
+
+        body.dark nav{
+            background: #111111;
+            color:snow; 
+        }
+
+        body.dark .detalle{
+            background: #111111;
+            color:snow; 
+        }
+
+    </style>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+   
+</head>
+<body>
+
+    <div class="modal fade" id="staticEdit" tabindex="-1" aria-labelledby="staticEdit" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticEdit">Editar receta</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body">
+                                                                              
+                    <ul><label>Nombre:</label></ul>
+                    <ul><input type="hidden" value="" id="idreceta"></ul>
+                    <ul><input type="text" id="idname" ></ul>
+                    <ul><label>Garnish:</label></ul>
+                    <ul><input type="text" id="idgarnish"></ul>      
+                    <ul><label> Ingredientes </label> </ul>
+                    <ul><textarea id="Ingtextarea"></textarea></ul>
+                    <ul><label> Instrucciones: </label> </ul>
+                    <ul><textarea id="Instextarea"></textarea></ul>
+                    <ul><input type=submit onclick="editar()" ></ul>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                                                                                                   
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Enviar</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+ 
+    <div class="modal fade" id="staticCreate" tabindex="-1" aria-labelledby="staticCreate" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticCreate">Crear receta</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body">
+                                                                              
+                    <ul><label>Nombre:</label></ul>
+                    <ul><input type="text" id="idcrearname" ></ul>
+                    <ul><label>Garnish:</label></ul>
+                    <ul><input type="text" id="idcreargarnish"></ul>      
+                    <ul><label> Ingredientes </label> </ul>
+                    <ul><textarea id="Ingcreartextarea"></textarea></ul>
+                    <ul><label> Instrucciones: </label> </ul>
+                    <ul><textarea id="Inscreartextarea"></textarea></ul>
+                    <ul><input type=submit onclick="crear()" ></ul>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>                                                                                                   
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Enviar</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <h1> Práctica 4</h1>
+        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticCreate"> Crear receta </button>
+        <button class="btn btn-sm btn-outline-secondary switch" id="switch" > 
+            Modo noche
+        </button>   
+        <div class="search-wrapper">
+            <label for="search">Search Users</label>
+            <input type="search" id="search" data-search>
+        </div>
+    </nav>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+            <th>N</th>
+            <th>Name</th>
+            <th></th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <script src="{{url_for('static',filename='js/frontend.js')}}" ></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> 
+</body>
+</html>
